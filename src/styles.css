@@ -20,6 +20,26 @@
     background-position: left top , left bottom , right top , right bottom;
     animation: rotate 1s linear infinite;
   }
+  .gallery__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+  }
+
+  .cat-info {
+    
+    text-decoration: none;
+      height: 100%;
+      width: auto;
+      object-fit: cover; 
+    
+  }
+
+  .cat-info img {
+    max-width: 500px; 
+    
+  }
   @keyframes rotate {
     0% {
       width: 64px;

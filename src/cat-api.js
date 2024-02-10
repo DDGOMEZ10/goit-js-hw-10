@@ -36,7 +36,7 @@ function showElement(element) {
   select.style.display = "none";
   Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
 
-      // Muestra el mensaje de error y oculta el select
+      // Show the message errorand hide the select
       error.style.display = "block";
       select.style.display = "none";
     });
@@ -56,7 +56,7 @@ function showElement(element) {
     })
     .catch(error => {
       console.error(error);
-      showElement(error); // show the error with visible classMuestra el error con la clase visible
+      showElement(error); // show the error with visible class
       hideElement(loader); // hidden the loader 
       hideElement(catInfo); // hidden the catInfo
     });
@@ -64,61 +64,4 @@ function showElement(element) {
   
   
 
-  /*
-  export function fetchBreeds() {
-    const select = document.querySelector(".breed-select");
-    const loader = document.querySelector(".loader");
-    hideElement(select); // Oculta el select
-    showElement(loader); // Muestra el loader
-    return axios.get("https://api.thecatapi.com/v1/breeds")
-    .then(response => {
-      showElement(select); // Muestra el select
-      hideElement(loader); // Oculta el loader
-      return response.data;
-    })
-    .catch(error => {
-      console.error(error);
-      hideElement(loader); // Oculta el loader
-    });
-  }
-  
-  export function fetchCatByBreed(breedId) {
-    const catInfo = document.querySelector(".cat-info");
-    const loader = document.querySelector(".loader");
-    hideElement(catInfo); // Oculta el catInfo
-    showElement(loader); // Muestra el loader
-    return axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
-    .then(response => {
-      showElement(catInfo); // Muestra el catInfo
-      hideElement(loader); // Oculta el loader
-      return response.data;
-    })
-    .catch(error => {
-      console.error(error);
-      hideElement(loader); // Oculta el loader
-    });
-  }
-  
-
-
-
-
-/*export function fetchBreeds() {
-  return axios.get("https://api.thecatapi.com/v1/breeds")
-  .then(response => {
-    return response.data;
-  })
-  .catch(error => {
-    console.error(error);
-  });
-}
-
-export function fetchCatByBreed(breedId) {
-  return axios.get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
-  .then(response => {
-    return response.data;
-  })
-  .catch(error => {
-    console.error(error);
-  });
-}*/
+ 

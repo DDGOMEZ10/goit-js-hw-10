@@ -39,6 +39,7 @@ breedSelect.addEventListener("change", event => {
     catImageElement.src = imageUrl;
     catImageElement.style.width = "100%"; 
 catImageElement.style.height = "100%"; 
+catImageElement.classList.add('gallery__image');
 
     catInfo.innerHTML = "";
     catInfo.appendChild(catNameElement);
