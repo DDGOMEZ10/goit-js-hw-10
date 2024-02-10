@@ -1,5 +1,4 @@
 
-
 import Notiflix from 'notiflix';
 import axios from "axios";
 
@@ -9,29 +8,35 @@ function showElement(element) {
     element.classList.remove("hidden");
     element.classList.add("visible");
   }
-  
   function hideElement(element) {
     element.classList.remove("visible");
     element.classList.add("hidden");
   }
-
   export function fetchBreeds() {
+
+    
     const select = document.querySelector(".mySelect");
     const loader = document.querySelector(".loader");
     const error = document.querySelector(".error");
     hideElement(select); // hidden the select
     showElement(loader); // show the loader
+    const buscaTuGatoOption = document.createElement("option");
+      buscaTuGatoOption.value = "";
+      buscaTuGatoOption.text = "Search your cat";
+      select.insertBefore(buscaTuGatoOption, select.firstChild);
     return axios.get("https://api.thecatapi.com/v1/breeds")
     .then(response => {
       showElement(select); // show the select
       hideElement(loader); // hidden the loader
+
+      
+
       return response.data;
     })
     .catch(error => {
       console.error(error);
       const errorElement = document.querySelector(".error");
   errorElement.style.display = "none";
-  
   const select = document.querySelector(".mySelect");
   select.style.display = "none";
   Notiflix.Notify.failure('Oops! Something went wrong! Try reloading the page!');
@@ -41,6 +46,7 @@ function showElement(element) {
       select.style.display = "none";
     });
 }
+
   export function fetchCatByBreed(breedId) {
     const catInfo = document.querySelector(".cat-info");
     const loader = document.querySelector(".loader");

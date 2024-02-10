@@ -7,10 +7,18 @@ axios.defaults.headers.common["x-api-key"] = "live_HuL5wNrwG68x7FLRn5nkOc4jCM2M6
 //imports from cat-api.js
 import { fetchBreeds, fetchCatByBreed } from "./cat-api.js";
 
+
+
+
+
 const breedSelect = document.querySelector(".mySelect");
 const loader = document.querySelector(".loader");
 const error = document.querySelector(".error");
 const catInfo = document.querySelector(".cat-info");
+
+
+
+
 
 breedSelect.addEventListener("change", event => {
   const breedId = event.target.value;
@@ -65,11 +73,17 @@ fetchBreeds()
     option.value = breed.id;
     option.text = breed.name;
     select.appendChild(option);
+    
   });
+   
+
 })
+
+
 .catch(error => {
   console.error(error);
   if (error && error.style) {
     error.style.display = "block";
   }
 });
+
